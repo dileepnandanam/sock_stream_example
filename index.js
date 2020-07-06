@@ -7,7 +7,7 @@ var io = require('socket.io')(server);
 
 const cv = require('opencv4nodejs');
 const vCap = new cv.VideoCapture(0);
-
+console.log('WebCam connected!');
 app.get("/stream",function(req,res){
     res.sendFile(path.join(__dirname,'index.html'));
 });
@@ -20,7 +20,7 @@ setInterval(function(){
 },100);
 
 server.listen(3000);
-
+console.log('WebCam server started!');
 // const LiveCam = require('livecam');
 // const webcam_server = new LiveCam
 // ({
